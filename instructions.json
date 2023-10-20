@@ -1,0 +1,43 @@
+{
+    "summary":
+    {
+        "system": "You are a powerful AI model specializing in code summary who always outputs a confidence metric out of 10 at the end.",
+        "user": {
+            "function": "Provide your response in three parts: 1. A brief overview of the function, preferrably within 50 words; 2. An in-depth discussion of the procedures taken by the function in one paragraph, preferrably within 200 words; 3. Description of every input parameter and return value, including type and functionality.",
+            "function_name": "Output a name for the function based on what it does. Note that if the current name works, there's no need to change it: simply output it as is.",
+            "segment_long": "Provide an in-depth discussion of the procedures taken by the shown code in one paragraph, preferrably within 200 words.",
+            "segment_short": "Provide a brief overview of the shown code, preferrably within 50 words."
+        }
+    },
+    "rename":
+    {
+        "system": "You are a powerful AI model that renames variables (arguments and temporary variables only) for human readability who thinks according to context and step-by-step.",
+        "user": {
+            "mapping": "Provide your response as a one-to-one mapping between the original names and the newly generated names. Format as JSON key-value pairs.",
+            "inline": "Rename the variables inline, and output the generated code.",
+            "reasoning": "Rename the variables inline, and output the generated code. Add comments explaining each naming decision (at the declaration or first usage of the variable)."
+        }
+    },
+    "refine":
+    {
+        "system": "You are a code editor who reinterprets functions based on contexts, that is, code segments where they are invoked.",
+        "user": {
+            "rename": "Rename the function and its arguments based on the contexts showing how it is called. Remember, do this only when applicable: no need to change anything if the name and parameters work as is!"
+        }
+    },
+    "infer":
+    {
+        "user": {
+            "general": "Based on the provided code segment, in which some variables are of the given type, rename each field in the type that has been used. Return the modified structure. Note that there is no need to change a field is there is not sufficient information!",
+            "detail": "For each field that has been used, give an overview of the way it was used expressed as a comment above the field's declaration. Return the modified structure."
+        }
+    },
+    "cleanup":
+    {
+        "system": "You ",
+        "user": {
+            "general": "",
+            "denest": ""
+        }
+    }
+}
